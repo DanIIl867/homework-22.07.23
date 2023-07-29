@@ -1,17 +1,17 @@
 //1
 
-let messageCount = 0;
+// let messageCount = 0;
 
-function showMessage() {
-  messageCount++;
-  console.log(`Повідомлення ${messageCount}`);
+// function showMessage() {
+//   messageCount++;
+//   console.log(`Повідомлення ${messageCount}`);
   
-  if (messageCount === 5) {
-    clearInterval(intervalId);
-  }
-}
+//   if (messageCount === 5) {
+//     clearInterval(intervalId);
+//   }
+// }
 
-const intervalId = setInterval(showMessage, 1000);
+// const intervalId = setInterval(showMessage, 1000);
 
 
 //2
@@ -85,18 +85,16 @@ const intervalId = setInterval(showMessage, 1000);
 
 // 4
 
-// const showMessage = () => {
-//     alert("Time's up!");
-//   };
+function startTimer() {
+    const timeInput = document.getElementById('timeInput');
+    const timeInSeconds = parseInt(timeInput.value, 10);
 
-//   const startTimer = () => {
-//     const inputSeconds = parseInt(document.getElementById("seconds").value);
-//     if (isNaN(inputSeconds) || inputSeconds <= 0) {
-//       alert("Please enter a valid positive number of seconds.");
-//       return;
-//     }
+    if (isNaN(timeInSeconds) || timeInSeconds <= 0) {
+      alert('Будь ласка, введіть коректний час (більше 0 секунд).');
+      return;
+    }
 
-//     setTimeout(showMessage, inputSeconds * 1000);
-//   };
-
-//   document.getElementById("startButton").addEventListener("click", startTimer);
+    setTimeout(() => {
+      alert('Таймер завершився!');
+    }, timeInSeconds * 1000);
+  };
